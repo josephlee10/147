@@ -1,0 +1,85 @@
+/* applies to anything of class "example-class-selector" */
+.example-class-selector {
+	margin-top: 2em;
+}
+
+/* applies to any <p> descendants of an element of class "example-class-selector" */
+.example-class-selector p {
+	/* Colors are in hexadecimal: http://www.colorpicker.com/ */	
+	color: #CC00AA;
+}
+
+h1, h2, h3, h4, h5 {
+	color: #8382BF;
+}
+
+.centered-pills {
+	text-align:center;
+}
+.centered-pills ul.nav-pills { 
+	display:inline-block; 
+}
+.centered-pills li { 
+	display:inline; 
+}
+.centered-pills a { 
+	float:left; 
+}
+
+.foods{
+	max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    clear: both;
+    outline-style: dotted;
+    outline-width: 1px;
+    outline-color: #A3D9F7;
+    padding-bottom: 5px;
+}
+
+.foods h3, p {
+	padding-top: 10px;
+	text-align: center;
+}
+
+.image_and_like button {
+	margin-left: 10px;
+	float: left;
+}
+
+.foods img {
+	display: block;
+	min-width: 200px;
+	max-width: 450px;
+	width: 80%;
+	height: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 10px;
+}
+
+.modal-title {
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.modal-body h3 {
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.comments h4, p {
+	text-align: left;
+	color: #FFFFFF;
+}
+
+.image_and_comments img {
+	float: left;
+	margin-right: 10px;
+}
+
+.hand{
+	cursor: pointer;
+}

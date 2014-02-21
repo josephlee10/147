@@ -1,0 +1,51 @@
+[
+		{
+			"id": 1,
+			"food_name": "Avocado Dish",
+			"description": "Something yummy.. with avocado",
+			"imageURL": "http://nutritiontranslator.files.wordpress.com/2011/07/img_0564.jpg",
+			"recipe": "http://www.avocadocentral.com/avocado-recipes/quick-and-easy-avocado-recipes",
+			"tags": "#omnivore",
+			"likes": 3,
+			"comments": [
+						{
+							"username": "joelee",
+							"comment": "This looks absolutely delicious!"
+						},
+						{
+							"username": "jor23bb",
+							"comment": "You Only Eat Once"
+						}
+					]			
+		},
+		{
+			"id": 2,
+			"food_name": "Fruit Bowl",
+			"description": "Yo I hear you like fruit so heres some fruit in your fruit",
+			"imageURL": "http://healthy-usa.com/healthy-recipes/healthy-23.jpg",
+			"recipe": "",
+			"tags": "#fruity, #bowl",
+			"likes": 4,
+			"comments": []			
+		},
+		{
+			"id": 3,
+			"food_name": "Chicken Wrap",
+			"description": "Delicious AND nutritious",
+			"imageURL": "http://bed56888308e93972c04-0dfc23b7b97881dee012a129d9518bae.r34.cf1.rackcdn.com/sites/default/files/imagecache/standard/recipes/MP6866.JPG",
+			"recipe": "",
+			"tags": "#chicken",
+			"likes": 5,
+			"comments": [
+					{
+						"username": "joelee",
+						"comment": "This looks aight...."
+					},
+					{
+						"username": "shellybelly",
+						"comment": "you only eat once?"
+					}
+				]			
+		}
+
+]
