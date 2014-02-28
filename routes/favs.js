@@ -1,19 +1,17 @@
 var models = require('../models');
 
-exports.projectInfo = function(req, res) {
-  var projectID = req.params.id;
+exports.view = function(req, res){
 
-  // query for the specific project and
-  // call the following callback
   models.Project
-    .find({"_id": projectID})
-    .exec(afterQuery);
+  .find()
+  .sort("-likes")
+  .exec(renderProjects);
 
-    function afterQuery(err, projects) {
-      if(err) console.log(err);
-      res.json(projects[0]);
-    }
-}
+  function renderProjects(err, projects) {
+    res.render('myFavs', {'allFoods':projects});   
+  }
+
+};
 
 exports.likedFoodInfo = function(req, res) {
   var foodID = req.params.id;
@@ -30,9 +28,8 @@ exports.likedFoodInfo = function(req, res) {
   res.send(foodID);
 }
 
-exports.deleteProject = function(req, res) {
+exports.deleteProjects = function(req, res) {
   var projectID = req.params.id;
-
   // find the project and remove it
   // YOU MUST send an OK response w/ res.send();
 

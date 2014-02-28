@@ -27,6 +27,11 @@ function initializePage() {
 		$(this).removeData('modal');
 	});
 
+	$(".undolike").click(function(e) {
+		var foodID = $(this).closest('.foods').attr('id');
+		$("#" + foodID).remove();
+	})
+
 }
 
 function likeFood(result) {
