@@ -39,8 +39,11 @@
 		{{#each allFoods}}
 		<div class="foods" id="{{id}}">
 			<h3>{{food_name}}</h3>
-			<div class="image_and_like">
-				<a href="#"><button type="button" class="btn btn-default like"><span class="glyphicon glyphicon-heart-empty"></span></button></a>
+			<div class="centered-pills">
+				<ul class="nav nav-pills">
+					<li><a href="#"><button type="button" class="btn btn-default like"><span class="glyphicon glyphicon-heart-empty"> like</span></button></a></li>
+					<li><a><button type="button" class="btn btn-default clickplz"><span class="glyphicon glyphicon-hand-down"> click pic to expand</span></button></a></li>
+				</ul>
 				<img src="{{imageURL}}" alt="Food Photos" class="img img-rounded hand" data-toggle="modal" data-target="#myModal">
       		</div>
 

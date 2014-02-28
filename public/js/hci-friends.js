@@ -16,6 +16,13 @@ function initializePage() {
 		$.get("/liked/" + foodID, likeFood);
 	});
 
+	$(".undolike").click(function(e) { // this doesn't work for some reason Office Hours time!
+		e.preventDefault();
+		var foodID = $(this).closest('.foods').attr('id');
+		console.log("user wants to undolike on " + foodID);
+		$.get("/undolike/" + foodID, undoLike);
+	});
+
 	$(".addCommentBtn").click(function(e) {
 		e.preventDefault;
 		var foodID = $(this).closest('.foods').attr('id');
@@ -27,17 +34,23 @@ function initializePage() {
 		$(this).removeData('modal');
 	});
 
-	$(".undolike").click(function(e) {
+	$(".eraseFromMyFavs").click(function(e) {
 		var foodID = $(this).closest('.foods').attr('id');
 		$("#" + foodID).remove();
-	})
+	});
 
 }
 
 function likeFood(result) {
 	console.log(result);
 	var foodID = result;
-	$("#" + foodID + " .glyphicon").replaceWith("<span class='glyphicon glyphicon-heart'></span>");
+	$("#" + foodID + " .like").replaceWith("<button type='button' class='btn btn-default undolike'><span class='glyphicon glyphicon-heart'> liked</span></button>");
+}
+
+function undoLike(result) {
+	console.log(result);
+	var foodID = result;
+	$("#" + foodID + " .undolike").replaceWith("<button type='button' class='btn btn-default like'><span class='glyphicon glyphicon-heart-empty'> like</span></button>");
 }
 
 function commentFood (result) {

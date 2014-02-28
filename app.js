@@ -53,6 +53,7 @@ app.get('/upload', add.addFood);
 // app.get('/profile', profile.view);
 // app.get('/search_results', search_results.view);
 app.get('/liked/:id', favs.likedFoodInfo);
+app.get('/undolike/:id', favs.undoLike);
 app.get('/commented/:id&:comments', add.addComments);
 
 

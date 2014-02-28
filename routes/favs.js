@@ -15,6 +15,8 @@ exports.view = function(req, res){
 
 exports.likedFoodInfo = function(req, res) {
   var foodID = req.params.id;
+
+  models.Project.find({"_id":foodID}, function(err, docs){ console.log(docs) });
   // var totalLikes = models.Project.find({}) + 1;
 
   // models.Project
@@ -28,17 +30,18 @@ exports.likedFoodInfo = function(req, res) {
   res.send(foodID);
 }
 
-exports.deleteProjects = function(req, res) {
-  var projectID = req.params.id;
+exports.undoLike = function(req, res) {
+  var foodID = req.params.id;
   // find the project and remove it
   // YOU MUST send an OK response w/ res.send();
 
-  models.Project
-    .find({"_id": projectID})
-    .remove()
-    .exec(afterRemoving);
+  // models.Project
+  //   .find({"_id": projectID})
+  //   .remove()
+  //   .exec(afterRemoving);
 
-    function afterRemoving(err, projects) {
-      res.send();
-    }
+  //   function afterRemoving(err, projects) {
+  //     res.send();
+  //   }
+  res.send(foodID);
 }
