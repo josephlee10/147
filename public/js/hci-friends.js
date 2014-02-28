@@ -9,14 +9,14 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-	$("#like").click(function(e) {
-		e.preventDefault;
+	$(".like").click(function(e) {
+		e.preventDefault();
 		var foodID = $(this).closest('.foods').attr('id');
 		console.log("user clicked on food " + foodID);
 		$.get("/liked/" + foodID, likeFood);
 	});
 
-	$("#addCommentBtn").click(function(e) {
+	$(".addCommentBtn").click(function(e) {
 		e.preventDefault;
 		var foodID = $(this).closest('.foods').attr('id');
 		var comments = $("#comment").val();
@@ -30,13 +30,11 @@ function initializePage() {
 }
 
 function likeFood(result) {
-	var foodID = result["id"];
+	console.log(result);
+	var foodID = result;
 	$("#" + foodID + " .glyphicon").replaceWith("<span class='glyphicon glyphicon-heart'></span>");
 }
 
 function commentFood (result) {
 	console.log(result);
 }
-
-//apparently we need to use this shit to delete shit from the modal so that it can be reloaded
-// every time we click on a new img. or something like that

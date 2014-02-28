@@ -11,13 +11,14 @@ var mongoose = require('mongoose');
 
 var index = require('./routes/index');
 var add = require('./routes/add');
+var favs = require('./routes/favs');
 // var project = require('./routes/project');
 // Example route
 // var user = require('./routes/user');
 
 // Connect to the Mongo database, whether locally or on Heroku
 // MAKE SURE TO CHANGE THE NAME FROM 'lab7' TO ... IN OTHER PROJECTS
-var local_database_name = 'lab7';
+var local_database_name = 'FoodBytes';
 var local_database_uri  = 'mongodb://localhost/' + local_database_name
 var database_uri = process.env.MONGOLAB_URI || local_database_uri
 mongoose.connect(database_uri);
@@ -52,9 +53,8 @@ app.get('/upload', add.addFood);
 // app.get('/favs', favs.view);
 // app.get('/profile', profile.view);
 // app.get('/search_results', search_results.view);
-// //app.get('/addComments', add.addComments);
-// app.get('/liked/:id', favs.likedFoodInfo);
-// app.get('/commented/:id&:comments', add.addComments);
+app.get('/liked/:id', favs.likedFoodInfo);
+app.get('/commented/:id&:comments', add.addComments);
 
 
 

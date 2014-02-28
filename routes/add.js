@@ -40,13 +40,17 @@ exports.addComments = function(req, res) {
 	var comment = req.query.comments;
 	var foodID = req.query.id;
 
-	var newComment = {
+	var newComment = new models.Project ({
 		"username": "leahkim",
 		"comment": comment
-	}
+	});
 
-	data["allFoods"][foodID - 1]["comments"].push(newComment);
-	res.render('index', data);   
+  	newComment.save({"_id": foodID}, afterSaving); // something is wrong here
+
+	function afterSaving(err) {
+		if (err) {console.log(err); res.send(500)};
+    	res.redirect('/');
+  	}
 };
 
 exports.addLikes = function(req, res) {
