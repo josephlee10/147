@@ -52,12 +52,3 @@ exports.addComments = function(req, res) {
     	res.redirect('/');
   	}
 };
-
-exports.addLikes = function(req, res) {
-	var likes = req.query.likes + 1;
-	var foodID = req.query.id;
-
-
-	data["allFoods"][foodID - 1]["likes"].push(likes);
-	res.render('index', data);   
-};

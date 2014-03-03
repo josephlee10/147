@@ -16,18 +16,16 @@ exports.view = function(req, res){
 exports.likedFoodInfo = function(req, res) {
   var foodID = req.params.id;
 
-  models.Project.find({"_id":foodID}, function(err, docs){ console.log(docs) });
-  // var totalLikes = models.Project.find({}) + 1;
+  models.Project.find({"_id":foodID}, function(err, docs){ 
+      var totalLikes = docs[0].likes;
+      models.Project
+            .update({"_id": foodID}, {"likes": totalLikes})
+            .exec(afterUpdating);
+  });
 
-  // models.Project
-  //       .update({"_id":foodID}, {"likes": totalLikes})
-  //       .exec(afterUpdating);
-
-  // function afterUpdating(err) {
-  //   res.send();
-  // }
-
-  res.send(foodID);
+  function afterUpdating(err) {
+    res.send(foodID);
+  }
 }
 
 exports.undoLike = function(req, res) {
