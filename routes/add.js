@@ -13,7 +13,7 @@ exports.addFood = function(req, res) {
 	var tag = req.query.tag;
 
 	var food_data = {
-		"usr_id": "laksjdfkjlhadslf",// change this
+		"usr_id": "guest",// change this
 		"food_name": name,
 		"description": des,
 		"imageFile": imageFile,
@@ -35,7 +35,7 @@ exports.addComments = function(req, res) {
 	var comment = req.query.comments;
 	var foodID = req.query.id;
 	var newComment = {
-		"comment_usr_id": "leahkim",
+		"comment_usr_id": "guest",
 		"comment": comment
 	};
 
@@ -45,7 +45,7 @@ exports.addComments = function(req, res) {
     	var allComments = docs[0].comments;
     	
     	allComments.push({
-    		"comment_usr_id": "leahkim",
+    		"comment_usr_id": "guest",
 			"comment": comment	
     	});
 

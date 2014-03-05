@@ -1,12 +1,12 @@
 [
 		{
-			"usr_id": "asdfasdfasdf",
+			"usr_id": "guest",
 			"food_name": "Avocado Dish",
 			"description": "Something yummy.. with avocado",
 			"imageFile": "http://nutritiontranslator.files.wordpress.com/2011/07/img_0564.jpg",
 			"recipe": "http://www.avocadocentral.com/avocado-recipes/quick-and-easy-avocado-recipes",
 			"tags": "#omnivore",
-			"likes": 3,
+			"likes": 7,
 			"comments": [
 						{
 							"comment_usr_id": "joelee",
@@ -19,21 +19,21 @@
 					]			
 		},
 		{
-			"usr_id": "kj;kjlkjkljlkj",
+			"usr_id": "guest",
 			"food_name": "Fruit Bowl",
 			"description": "Yo I hear you like fruit so heres some fruit in your fruit",
 			"imageFile": "http://healthy-usa.com/healthy-recipes/healthy-23.jpg",
-			"recipe": "",
+			"recipe": "http://allrecipes.com/recipe/watermelon-fruit-bowl/",
 			"tags": "#fruity, #bowl",
 			"likes": 4,
 			"comments": []			
 		},
 		{
-			"usr_id": "aksdlf9veef",
+			"usr_id": "jor23bb",
 			"food_name": "Chicken Wrap",
 			"description": "Delicious AND nutritious",
 			"imageFile": "http://bed56888308e93972c04-0dfc23b7b97881dee012a129d9518bae.r34.cf1.rackcdn.com/sites/default/files/imagecache/standard/recipes/MP6866.JPG",
-			"recipe": "",
+			"recipe": "http://www.eatingwell.com/recipes_menus/recipe_slideshows/healthy_wrap_recipes",
 			"tags": "#chicken",
 			"likes": 5,
 			"comments": [
@@ -44,6 +44,29 @@
 					{
 						"comment_usr_id": "shellybelly",
 						"comment": "you only eat once?"
+					}
+				]			
+		},
+		{
+			"usr_id": "joelee",
+			"food_name": "Apple pie in apples!",
+			"description": "Best thing ever!",
+			"imageFile": "http://2.bp.blogspot.com/-B99Zyw-qpTo/UNm1FfTnBcI/AAAAAAAAKH0/Q0QTwlPioQ0/s1600/1.jpg",
+			"recipe": "http://dessertswithbenefits.com/apple-pie-in-an-apple/",
+			"tags": "#chicken",
+			"likes":10,
+			"comments": [
+					{
+						"comment_usr_id": "joelee",
+						"comment": "haha commmenting on my own food."
+					},
+					{
+						"comment_usr_id": "shellybelly",
+						"comment": "I tried this and it was awesome!"
+					},
+					{
+						"comment_usr_id": "leahkim",
+						"comment": "Hmmm I'm going to try this for tonight. Thanks for the upload :)"
 					}
 				]			
 		}

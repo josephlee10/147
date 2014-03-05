@@ -47,7 +47,6 @@ function likeFood(result) {
 	console.log(result);
 	var foodID = result;
 	$("#" + foodID + " .like").replaceWith("<button type='button' class='btn btn-default undolike'><span class='glyphicon glyphicon-heart'> liked</span></button>");
-	alert("You liked this food!");
 }
 
 function undoLike(result) {
