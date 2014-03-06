@@ -41,6 +41,30 @@ function initializePage() {
 		$("#" + foodID).remove();
 	});
 
+
+
+
+
+
+	$('#addFriendForm').submit(function() {
+        status('uploading the file ...');
+ 
+        $(this).ajaxSubmit({                                                                                                                 
+ 
+            error: function(xhr) {
+		status('Error: ' + xhr.status);
+            },
+ 
+            success: function(response) {
+		//TODO: We will fill this in later
+            }
+	});
+ 
+	// Have to stop the form from submitting and causing                                                                                                       
+	// a page refresh - don't forget this                                                                                                                      
+	return false;
+    });
+
 }
 
 function likeFood(result) {

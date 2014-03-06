@@ -1,19 +1,25 @@
 var models = require('../models');
 
+var fs = require('fs');
+
 exports.view = function(req, res) {
 	res.render('add');
 }
 
-exports.upload = function(req, res) {
-	console.log("reached");
+exports.upload = function(req, res, next) {
+	console.log("homie");
+
+	var asdf = req.files;
+	console.log(asdf);
+
+	res.redirect('/');
+
 }
 
 exports.addFood = function(req, res) {
 
-
 	var image = req.files
 	console.log(image);
-
 
 
 	var name = req.query.name;
