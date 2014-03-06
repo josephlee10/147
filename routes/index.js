@@ -9,8 +9,9 @@ data.Project
 	.exec(renderProjects);
 
 	function renderProjects(err, projects) {
-		var data = {'showAlternate': false};
-		res.render('index', {'allFoods':projects});		
+		var data = {'showAlternate': false,
+					'allFoods': projects};
+		res.render('index', data);		
 	}
 };
 
@@ -21,7 +22,8 @@ exports.viewAlternate = function(req, res) {
 	.exec(renderProjects);
 
 	function renderProjects(err, projects) {
-		var data = {'showAlternate': true};
-		res.render('index', {'allFoods':projects});		
+		var data = {'showAlternate': true,
+					'allFoods': projects};
+		res.render('index', data);		
 	}
 };
