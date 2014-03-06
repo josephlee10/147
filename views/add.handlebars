@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>Upload</title>	
+	<title>Food Bytes</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
@@ -29,9 +29,9 @@
 	<div class="navigation">
     	<div class="centered-pills">
 			<ul class="nav nav-pills">
-				<li><a href="/"><button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-cutlery"></span> Food Bytes</button></a></li>
-  				<li><a href="/myFavs"><button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-heart"></span> My Favs</button></a></li>
-  				<li><a href="#"><button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-upload"></span> Upload</button></a></li>
+				<li><a href="/"><button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-home"></span> Home</button></a></li>
+  				<li><a href="/myProfile"><button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-user"></span> My Profile</button></a></li>
+  				<li><a href="#"><button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-upload"></span></button></a></li>
 			</ul>	
 		</div>
 	</div>
@@ -39,8 +39,8 @@
 	<form id="addFriendForm" role="form" method="post" action="/uploadPhoto" enctype="multipart/form-data">
 		<h3>Upload</h3>
 		<div class="form-group">
-	      <label for="image">Image URL:</label>
-	      <input type="file" class="form-control" id="image" placeholder="Image" name="image">
+	      <label for="image">Image File:</label>
+	      <input type="file" class="form-control" id="image" placeholder=".jpg or .png" name="image">
 	    </div>
 	    <div class="form-group">
 	      <label for="name">Name:</label>

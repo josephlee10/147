@@ -24,10 +24,12 @@ function initializePage() {
 	});
 
 	$(".addCommentBtn").click(function(e) {
-		e.preventDefault;
-		var foodID = $(this).closest('.foods').attr('id');
-		var comments = $("#comment").val();
-		$.get("/commented/" + foodID + "&" + comments, commentFood);
+		e.preventDefault();
+		var modalFoodID = $(this).closest('.modal').attr('id');
+		var foodID = modalFoodID.substr('modal_'.length);
+		var comments = $("#comment_" + foodID).val();
+		
+		$.get("/commented?id=" + foodID + "&comments=" + comments, commentFood);
 	});
 
 	$('body').on('hidden', '.modal', function () {
@@ -55,4 +57,7 @@ function undoLike(result) {
 
 function commentFood (result) {
 	console.log(result);
+	var username = result.comment_usr_id;
+	var comment = result.comment;
+	$(".comments h4").append('<p>' + username + ' said "' + comment + '"</p>'); // figure out how to add only once with the right css!
 }

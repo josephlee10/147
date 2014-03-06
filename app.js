@@ -12,9 +12,7 @@ var mongoose = require('mongoose');
 var index = require('./routes/index');
 var add = require('./routes/add');
 var favs = require('./routes/favs');
-// var project = require('./routes/project');
-// Example route
-// var user = require('./routes/user');
+var user = require('./routes/user');
 
 // Connect to the Mongo database, whether locally or on Heroku
 // MAKE SURE TO CHANGE THE NAME FROM 'lab7' TO ... IN OTHER PROJECTS
@@ -52,7 +50,10 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', index.view);
-app.get('/myFavs', favs.view);
+app.get('/alternate', index.viewAlternate);
+app.get('/login', user.login);
+app.get('/logout', user.logout);
+app.get('/myProfile', favs.view);
 app.get('/uploadPage', add.view); // This will load the upload page
 app.get('/upload', add.addFood);
 
@@ -63,7 +64,7 @@ app.post('/uploadPhoto', add.upload);
 // app.get('/search_results', search_results.view);
 app.get('/liked/:id', favs.likedFoodInfo);
 app.get('/undolike/:id', favs.undoLike);
-app.get('/commented/:id&:comments', add.addComments);
+app.get('/commented', add.addComments); // how????
 
 
 
