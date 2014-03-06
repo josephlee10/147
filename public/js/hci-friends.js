@@ -9,6 +9,8 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
+	$(".imgclicked").click(foodImgClicked);
+
 	$(".like").click(function(e) {
 		e.preventDefault();
 		var foodID = $(this).closest('.foods').attr('id');
@@ -65,6 +67,10 @@ function initializePage() {
 	return false;
     });
 
+}
+
+function foodImgClicked(e) {
+	ga("send", "event", "img", "click", "image", 1);
 }
 
 function likeFood(result) {

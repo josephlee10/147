@@ -42,6 +42,13 @@
 	      <label for="image">Image URL:</label>
 	      <input type="text" class="form-control" id="image" placeholder="For now please give an image URL" name="image">
 	    </div>
+<!-- 		<div class="form-group">
+	      <label for="image">Image URL:</label>
+	      <input type="text" class="form-control" id="image" placeholder=".jpg or .png" name="image">
+	    </div>	    
+ -->
+<!-- 		</br>
+		<h3>Details of image</h3>
 	    <div class="form-group">
 	      <label for="name">Name:</label>
 	      <input type="text" class="form-control" id="name" placeholder="Name" name="name">
@@ -57,11 +64,22 @@
 	    <div class="form-group">
 	    	<label for="tag">Tags:</label>
 	    	<input type="text" class="form-control" id="tag" placeholder="#example" name="tag">
-	    </div>
+	    </div> -->
 	    <input type="submit" id="submitBtn" class="btn btn-default" value="Upload the food!"></input>
 	</form>
 
 	</div>
+<<<<<<< HEAD
+
+
+
+
+
+
+	    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/javascripts/jquery.form.js"></script>
+    <script src="/javascripts/upload.js"></script>
+=======
 	<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -72,5 +90,6 @@
   ga('send', 'pageview');
 
 </script>
+>>>>>>> 8d6714c9eeeeb8e864255404868050b0821afeb0
 </body>
 </html>
