@@ -55,12 +55,13 @@ h1, h2, h3, h4, h5 {
 	margin-bottom: 1px;
 }
 
-.alternateView img {
-	background-color: #A4A4A4;
+.image_and_like p {
+	margin-left: 10px;
+	color: #000000;
 }
 
 .image_and_like button {
-	margin-left: 10px;
+	margin: 10px;
 	float: left;
 }
 
