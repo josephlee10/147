@@ -4,7 +4,7 @@ var Mongoose = require('mongoose');
 
 var ProjectSchema = new Mongoose.Schema({
   // fields are defined here
-  	"usr_id": String,
+  	"username": String,
 	"food_name": String,
 	"description": String,
 	"imageFile": String,
@@ -18,7 +18,7 @@ var ProjectSchema = new Mongoose.Schema({
 });
 
 var UserSchema = new Mongoose.Schema({
-	"username": String,
+	"usr_name": String,
 	"password": String,
 	"liked": [{
 			"food_id": String

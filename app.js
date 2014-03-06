@@ -51,11 +51,12 @@ app.get('/logout', user.logout);
 app.get('/myProfile', favs.view);
 app.get('/uploadPage', add.view); // This will load the upload page
 app.get('/upload', add.addFood);
-// app.get('/profile', profile.view);
-// app.get('/search_results', search_results.view);
 app.get('/liked/:id', favs.likedFoodInfo);
 app.get('/undolike/:id', favs.undoLike);
-app.get('/commented', add.addComments); // how????
+app.get('/commented', add.addComments);
+app.get('/eraseMyUpload', favs.eraseMyUpload);
+// app.get('/profile', profile.view);
+// app.get('/search_results', search_results.view);
 
 
 

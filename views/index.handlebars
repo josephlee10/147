@@ -44,9 +44,9 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
     <div class="navigation">
     	<div class="centered-pills">
 			<ul class="nav nav-pills">
-				<li><a href="#"><button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-home"></span></button></a></li>
-  				<li><a href="/myProfile"><button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-user"></span></button></a></li>
-  				<li><a href="/uploadPage"><button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-upload"></span></button></a></li>
+				<li><a href="#"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-home"></span></button></a></li>
+  				<li><a href="/myProfile"><button type="button" class="btn btn-default">My Profile</button></a></li>
+  				<li><a href="/uploadPage"><button type="button" class="btn btn-default">Upload</button></a></li>
 			</ul>	
 		</div>
 	</div>
@@ -60,6 +60,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 				<img src="{{imageFile}}" alt="Food Photos" class="img img-rounded hand imgclicked" data-toggle="modal" data-target="#modal_{{id}}">
 				<p>{{likes}} people liked this.</p>
 				<p>{{description}}</p>
+				<p>uploaded by {{username}}</p>
 			</div>      		
 			<div class="modal fade" id="modal_{{id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
@@ -140,7 +141,8 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
       				</div>
 	   			</div>
 			</div>
-			<p>{{description}}</p>
+			<h5>{{description}}</h5>
+			<h5>uploaded by {{username}}</h5>
 		</div>
 		{{/each}}
    		{{/if}}
