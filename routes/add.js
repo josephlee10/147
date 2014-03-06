@@ -4,7 +4,17 @@ exports.view = function(req, res) {
 	res.render('add');
 }
 
+exports.upload = function(req, res) {
+	console.log("reached");
+}
+
 exports.addFood = function(req, res) {
+
+
+	var image = req.files
+	console.log(image);
+
+
 
 	var name = req.query.name;
 	var des = req.query.description;

@@ -34,6 +34,11 @@ app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
+ 
+
+app.use(express.multipart());
+
+
 app.use(express.methodOverride());
 app.use(express.cookieParser('Intro HCI secret key'));
 app.use(express.session());
@@ -50,6 +55,10 @@ app.get('/', index.view);
 app.get('/myFavs', favs.view);
 app.get('/uploadPage', add.view); // This will load the upload page
 app.get('/upload', add.addFood);
+
+
+app.post('/uploadPhoto', add.upload);
+
 // app.get('/profile', profile.view);
 // app.get('/search_results', search_results.view);
 app.get('/liked/:id', favs.likedFoodInfo);
