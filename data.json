@@ -1,4 +1,4 @@
-[
+{"Projects":[
 		{
 			"username": "guest",
 			"food_name": "Avocado Dish",
@@ -70,5 +70,13 @@
 					}
 				]			
 		}
+],
 
+"Users": [
+		{
+			"usr_name": "guest",
+			"password": "password",
+			"liked": []
+		}
 ]
+}

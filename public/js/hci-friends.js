@@ -33,33 +33,9 @@ function initializePage() {
 
 	$(".eraseFromMyUploads").click(function(e) {
 		var foodID = $(this).closest('.foods').attr('id');
+		console.log(foodID);
 		$.get("/eraseMyUpload?id=" + foodID, erasedUpload);
 	});
-
-
-
-
-
-
-	$('#addFriendForm').submit(function() {
-        status('uploading the file ...');
- 
-        $(this).ajaxSubmit({                                                                                                                 
- 
-            error: function(xhr) {
-		status('Error: ' + xhr.status);
-            },
- 
-            success: function(response) {
-		//TODO: We will fill this in later
-            }
-	});
- 
-	// Have to stop the form from submitting and causing                                                                                                       
-	// a page refresh - don't forget this                                                                                                                      
-	return false;
-    });
-
 }
 
 function foodImgClicked(e) {
@@ -79,6 +55,9 @@ function commentFood (result) {
 	$(".comments h4").append('<p>' + username + ' said "' + comment + '"</p>'); // figure out how to add only once with the right css!
 }
 
-function erasedUpload (result) {
-	$("#" + foodID).replaceWith("<p>This post has been deleted</p>");
+function erasedUpload (foodID) {
+	$("#" + foodID).fadeOut('slow', function() {
+		$(this).remove();
+		alert("Your post has been removed");
+	});
 }

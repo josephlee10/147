@@ -61,7 +61,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .image_and_like p {
-	margin-left: 10px;
+	text-align: center;
 	color: #000000;
 }
 
