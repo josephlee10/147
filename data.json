@@ -70,12 +70,13 @@
 					}
 				]			
 		}
-
 ],
-"Users" : [
+
+"Users": [
 		{
 			"usr_name": "guest",
 			"password": "password",
 			"liked": []
 		}
-]}
+]
+}

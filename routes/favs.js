@@ -7,17 +7,42 @@ exports.view = function(req, res){ // This will render what the user uploaded an
 
   function renderProjects(err, projects) {
     var nUploads = projects.length;
-
+    var allLikedarr = [];
     models.User
           .find({"usr_name": "guest"}, function (err, docs) {
-              console.log(docs[0]);
+              var foodIDarr = docs[0].liked;
+              if (foodIDarr.length > 0) { // user liked something!
+                var to_push_count = foodIDarr.length;
+                for (var i = 0; i < foodIDarr.length; i++) {
+                  models.Project.find({"_id": foodIDarr[i].food_id}, function (err, foods) {
+                    allLikedarr.push(foods[0]);
+                    to_push_count--;
+                    if (to_push_count <= 0) {
+                      if (nUploads > 0) res.render('myFavs', {'showLiked': true,
+                                                              'showUploads': true,
+                                                              'allFoods': projects,
+                                                              'allLikedFoods': allLikedarr});
+                      else res.render('myFavs', {'showLiked': true,
+                                                 'showUploads': false,
+                                                 'allLikedFoods': allLikedarr});
+                    }
+                  });
+                }
+              } else { // user didn't like anything
+                if (nUploads > 0) res.render('myFavs', {'showLiked': false,
+                                                        'showUploads': true,
+                                                        'allFoods': projects});
+                else res.render('myFavs', {'showLiked': false,
+                                           'showUploads': false});
+              }
           });
 
-    if (nUploads > 0)
-      res.render('myFavs', {'showUploads': true,
-                            'allFoods':projects});   
-    else
-      res.render('myFavs', {'showUploads': false});
+  //   if (nUploads > 0)
+  //     res.render('myFavs', {'showUploads': true,
+  //                           'allFoods':projects});   
+  //   else
+  //     res.render('myFavs', {'showUploads': false});
+  // }
   }
 };
 
@@ -30,7 +55,6 @@ exports.likedFoodInfo = function(req, res) { // This will add 1 to the total lik
             .update({"_id": foodID}, {"likes": totalLikes});
       models.User
             .find({"usr_name": "guest"}, function(err, docs){
-                console.log(docs[0]);
                 var allLiked = docs[0].liked;
                 allLiked.push({
                   "food_id": foodID

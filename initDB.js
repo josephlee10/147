@@ -33,7 +33,11 @@ var users_json = allData_json.Users;
 models.Project
   .find()
   .remove()
-  .exec(onceClear); // callback to continue at
+  .exec(clearUserDB); // callback to continue at
+
+function clearUserDB(err) {
+  models.User.find().remove().exec(onceClear);
+}
 
 // Step 3: load the data from the JSON file
 function onceClear(err) {
@@ -55,11 +59,12 @@ function onceClear(err) {
         console.log('Food DONE');
         // The script won't terminate until the 
         // connection to the database is closed
+        mongoose.connection.close()
       }
     });
   }
 
-  to_save_count = users_json.length;
+  var to_save_count_user = users_json.length;
   for(var i=0; i<users_json.length; i++) {
     var json = users_json[i];
     var proj = new models.User(json);
@@ -67,15 +72,15 @@ function onceClear(err) {
     proj.save(function(err, proj) {
       if(err) console.log(err);
 
-      to_save_count--;
-      console.log(to_save_count + ' left to save');
-      if(to_save_count <= 0) {
+      to_save_count_user--;
+      console.log(to_save_count_user + ' left to save');
+      if(to_save_count_user <= 0) {
         console.log('User DONE');
         // The script won't terminate until the 
         // connection to the database is closed
-        mongoose.connection.close()
       }
     });
   }
+
 }
 
