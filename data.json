@@ -1,6 +1,6 @@
 [
 		{
-			"usr_id": "guest",
+			"username": "guest",
 			"food_name": "Avocado Dish",
 			"description": "Something yummy.. with avocado",
 			"imageFile": "http://nutritiontranslator.files.wordpress.com/2011/07/img_0564.jpg",
@@ -19,7 +19,7 @@
 					]			
 		},
 		{
-			"usr_id": "guest",
+			"username": "guest",
 			"food_name": "Fruit Bowl",
 			"description": "Yo I hear you like fruit so heres some fruit in your fruit",
 			"imageFile": "http://healthy-usa.com/healthy-recipes/healthy-23.jpg",
@@ -29,7 +29,7 @@
 			"comments": []			
 		},
 		{
-			"usr_id": "jor23bb",
+			"username": "jor23bb",
 			"food_name": "Chicken Wrap",
 			"description": "Delicious AND nutritious",
 			"imageFile": "http://bed56888308e93972c04-0dfc23b7b97881dee012a129d9518bae.r34.cf1.rackcdn.com/sites/default/files/imagecache/standard/recipes/MP6866.JPG",
@@ -48,7 +48,7 @@
 				]			
 		},
 		{
-			"usr_id": "joelee",
+			"username": "joelee",
 			"food_name": "Apple pie in apples!",
 			"description": "Best thing ever!",
 			"imageFile": "http://2.bp.blogspot.com/-B99Zyw-qpTo/UNm1FfTnBcI/AAAAAAAAKH0/Q0QTwlPioQ0/s1600/1.jpg",

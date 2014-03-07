@@ -29,7 +29,7 @@ exports.addFood = function(req, res) {
 	var tag = req.query.tag;
 
 	var food_data = {
-		"usr_id": "guest",// change this
+		"username": "guest",
 		"food_name": name,
 		"description": des,
 		"imageFile": imageFile,

@@ -11,7 +11,6 @@ data.Project
 	function renderProjects(err, projects) {
 		var data = {'showAlternate': false,
 					'allFoods': projects};
-		console.log(projects);
 		res.render('index', data);		
 	}
 };

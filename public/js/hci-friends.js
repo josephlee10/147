@@ -18,13 +18,6 @@ function initializePage() {
 		$.get("/liked/" + foodID, likeFood);
 	});
 
-	$(".undolike").click(function(e) { // this doesn't work for some reason Office Hours time!
-		e.preventDefault();
-		var foodID = $(this).closest('.foods').attr('id');
-		console.log("user wants to undolike on " + foodID);
-		$.get("/undolike/" + foodID, undoLike);
-	});
-
 	$(".addCommentBtn").click(function(e) {
 		e.preventDefault();
 		var modalFoodID = $(this).closest('.modal').attr('id');
@@ -38,9 +31,9 @@ function initializePage() {
 		$(this).removeData('modal');
 	});
 
-	$(".eraseFromMyFavs").click(function(e) {
+	$(".eraseFromMyUploads").click(function(e) {
 		var foodID = $(this).closest('.foods').attr('id');
-		$("#" + foodID).remove();
+		$.get("/eraseMyUpload?id=" + foodID, erasedUpload);
 	});
 
 
@@ -76,13 +69,7 @@ function foodImgClicked(e) {
 function likeFood(result) {
 	console.log(result);
 	var foodID = result;
-	$("#" + foodID + " .like").replaceWith("<button type='button' class='btn btn-default undolike'><span class='glyphicon glyphicon-heart'> liked</span></button>");
-}
-
-function undoLike(result) {
-	console.log(result);
-	var foodID = result;
-	$("#" + foodID + " .undolike").replaceWith("<button type='button' class='btn btn-default like'><span class='glyphicon glyphicon-heart-empty'> like</span></button>");
+	$("#" + foodID + " .like").replaceWith("<button type='button' class='btn btn-default'><span class='glyphicon glyphicon-heart'> liked</span></button>");
 }
 
 function commentFood (result) {
@@ -90,4 +77,8 @@ function commentFood (result) {
 	var username = result.comment_usr_id;
 	var comment = result.comment;
 	$(".comments h4").append('<p>' + username + ' said "' + comment + '"</p>'); // figure out how to add only once with the right css!
+}
+
+function erasedUpload (result) {
+	$("#" + foodID).replaceWith("<p>This post has been deleted</p>");
 }

@@ -44,6 +44,11 @@ h1, h2, h3, h4, h5 {
 	text-align: center;
 }
 
+.foods h5 {
+	margin-left: 10px;
+	color: #000000;
+}
+
 .foods img {
 	display: block;
 	min-width: 200px;
