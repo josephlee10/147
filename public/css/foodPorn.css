@@ -15,6 +15,7 @@ h1, h2, h3, h4, h5 {
 
 .centered-pills {
 	text-align:center;
+	width:100%;
 }
 .centered-pills ul.nav-pills { 
 	display:inline-block; 
@@ -34,9 +35,10 @@ h1, h2, h3, h4, h5 {
     margin-bottom: auto;
     clear: both;
     outline-style: dotted;
-    outline-width: 1px;
+    outline-width: 2px;
     outline-color: #A3D9F7;
     padding-bottom: 5px;
+    background-color: white;
 }
 
 .foods h3, p {
@@ -92,4 +94,24 @@ h1, h2, h3, h4, h5 {
 
 .hand{
 	cursor: pointer;
+}
+
+#myfavs_navbar {
+	width:53%;
+	margin: auto;
+}
+
+.selected {
+	background-color: #8382BF;
+}
+
+body {
+	background-color: #ffffff;
+}
+
+#foodbytes {
+	font-family: cursive;
+	font-weight: bold;
+	margin:auto;
+
 }

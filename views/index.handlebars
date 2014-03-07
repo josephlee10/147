@@ -44,12 +44,19 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
     <div class="navigation">
     	<div class="centered-pills">
 			<ul class="nav nav-pills">
-				<li><a href="#"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-home"></span></button></a></li>
+				<li class="selected"><a href="#"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-home"></span></button></a></li>
   				<li><a href="/myProfile"><button type="button" class="btn btn-default">My Profile</button></a></li>
   				<li><a href="/uploadPage"><button type="button" class="btn btn-default">Upload</button></a></li>
 			</ul>	
 		</div>
 	</div>
+
+</br>
+<div class="text-center">
+	<h1 class="text-center" id="foodbytes">Trending foodbytes</h1>
+</div>
+</br>
+
 	<div>
 		{{#if showAlternate}} <!--Alternate View-->
 		{{#each allFoods}}
@@ -97,6 +104,9 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 			</div>
 		</div>
 		{{/each}}
+
+
+
    		{{else}} <!--Default View-->
    		{{#each allFoods}}
 		<div class="foods" id="{{id}}">
@@ -117,7 +127,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 					<div class="modal-body">
 						<div class="image_and_comments">
 						<img src="{{imageFile}}" alt="Food Photos" class="img img-rounded">
-						<div class="comments">
+						<div class="comments" id="comments_for_{{id}}">
 							<h4>Comments: </h4>
 							{{#each comments}}
 							<p>{{comment_usr_id}} said "{{comment}}"</p>
