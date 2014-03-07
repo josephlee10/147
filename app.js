@@ -62,7 +62,7 @@ app.get('/login', user.login);
 app.get('/logout', user.logout);
 app.get('/myProfile', favs.view);
 app.get('/uploadPage', add.view); // This will load the upload page
-<<<<<<< HEAD
+
 // app.get('/upload', add.addFood);
 
 // app.post('/upload', add.upload);
@@ -71,9 +71,8 @@ app.post('/upload', add.upload);
 
 // app.get('/profile', profile.view);
 // app.get('/search_results', search_results.view);
-=======
+
 app.get('/upload', add.addFood);
->>>>>>> d1eeddb7fafe0f230d52b28eaadfe74afbf46bf8
 app.get('/liked/:id', favs.likedFoodInfo);
 app.get('/undolike/:id', favs.undoLike);
 app.get('/commented', add.addComments);
