@@ -9,21 +9,7 @@ data.Project
 	.exec(renderProjects);
 
 	function renderProjects(err, projects) {
-		var data = {'showAlternate': false,
-					'allFoods': projects};
-		res.render('index', data);		
-	}
-};
-
-exports.viewAlternate = function(req, res) {
-	data.Project
-	.find()
-	.sort("-likes")
-	.exec(renderProjects);
-
-	function renderProjects(err, projects) {
-		var data = {'showAlternate': true,
-					'allFoods': projects};
+		var data = {'allFoods': projects};
 		res.render('index', data);		
 	}
 };

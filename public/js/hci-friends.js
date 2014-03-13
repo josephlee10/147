@@ -22,6 +22,7 @@ function initializePage() {
 		e.preventDefault();
 		var modalFoodID = $(this).closest('.modal').attr('id');
 		var foodID = modalFoodID.substr('modal_'.length);
+		// console.log("foodID: " + foodID);
 		var comments = $("#comment_" + foodID).val();
 		
 		$.get("/commented?id=" + foodID + "&comments=" + comments, commentFood);
@@ -60,11 +61,13 @@ function unlikeFood(result) {
 	})
 }
 
+// result is an array where result[0] is the comment, and result[1] is the photo id
 function commentFood (result) {
 	console.log(result);
-	var username = result.comment_usr_id;
-	var comment = result.comment;
-	$(".comments h4").append('<p>' + username + ' said "' + comment + '"</p>'); // figure out how to add only once with the right css!
+	var username = result[0].comment_usr_id;
+	var comment = result[0].comment;
+	var photo_id = "#" + result[1].photo_id;
+	$(photo_id + " .comments h4").append('<p>' + username + ' said "' + comment + '"</p>'); // figure out how to add only once with the right css!
 }
 
 function erasedUpload (foodID) {

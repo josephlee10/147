@@ -3,6 +3,7 @@
  * Module dependencies.
  */
 
+
 var express = require('express');
 var http = require('http');
 var path = require('path');
@@ -32,11 +33,22 @@ app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
+ 
+
+app.use(express.multipart());
+app.use(express.bodyParser({uploadDir:'./uploads'}));
+
 app.use(express.methodOverride());
 app.use(express.cookieParser('Intro HCI secret key'));
 app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+
+app.use(express.bodyParser());
+
+
 
 // development only
 if ('development' == app.get('env')) {
@@ -45,11 +57,9 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', index.view);
-app.get('/alternate', index.viewAlternate);
-app.get('/login', user.login);
-app.get('/logout', user.logout);
 app.get('/myProfile', favs.view);
 app.get('/uploadPage', add.view); // This will load the upload page
+app.post('/upload', add.upload);
 app.get('/upload', add.addFood);
 app.get('/liked/:id', favs.likedFoodInfo);
 app.get('/undolike/:id', favs.undoLike);

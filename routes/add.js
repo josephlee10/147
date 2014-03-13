@@ -1,10 +1,26 @@
 var models = require('../models');
 
+var fs = require('fs');
+
 exports.view = function(req, res) {
 	res.render('add');
 }
 
+exports.upload = function(req, res, next) {
+	console.log("homie");
+
+	var asdf = req.files;
+	console.log(asdf);
+
+	res.redirect('/');
+
+}
+
 exports.addFood = function(req, res) {
+
+	var image = req.files
+	console.log(image);
+
 
 	var name = req.query.name;
 	var des = req.query.description;
@@ -41,9 +57,9 @@ exports.addComments = function(req, res) {
 
 	models.Project
 	.find({"_id": foodID}, function (err, docs) {
-		console.log(docs[0]);
+		// console.log(docs[0]);
     	var allComments = docs[0].comments;
-    	
+
     	allComments.push({
     		"comment_usr_id": "guest",
 			"comment": comment	
@@ -58,6 +74,11 @@ exports.addComments = function(req, res) {
 
 	function afterUploadingComment(err) {
 		if (err) {console.log(err); res.send(500)};
-    	res.send(newComment);
+		var photo_id = {"photo_id": foodID};
+		var comment_and_id = [newComment, photo_id];
+
+		// pass in comment_and_id here so that the call back 
+		//function commentFood in hci-friends can locate which modal popup to edit
+    	res.send(comment_and_id);
   	}
 };
