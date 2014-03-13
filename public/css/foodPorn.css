@@ -1,12 +1,5 @@
-/* applies to anything of class "example-class-selector" */
-.example-class-selector {
-	margin-top: 2em;
-}
-
-/* applies to any <p> descendants of an element of class "example-class-selector" */
-.example-class-selector p {
-	/* Colors are in hexadecimal: http://www.colorpicker.com/ */	
-	color: #CC00AA;
+body {
+	padding-top: 70px;
 }
 
 h1, h2, h3, h4, h5 {
@@ -114,10 +107,3 @@ body {
 	font-weight: bold;
 	margin:auto;
 }
-
-.nav-collapse, .nav-collapse.collapse {
-    overflow: visible;
-}   
-.navbar .btn-navbar {
-    display: none;
-}   

@@ -20,7 +20,7 @@
 
 	<div class="container">
 
-    <div class="navigation">
+    <div class="navigation navbar-fixed-top">
     	<div class="centered-pills">
 			<ul class="nav nav-pills">
 				<li class="selected"><a href="#"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-home"></span></button></a></li>
@@ -45,7 +45,7 @@
 					<li><a><button type="button" class="btn btn-default like"><span class="glyphicon glyphicon-heart-empty"> like</span></button></a></li>
 					<li><a><label for="clickplz" class="btn btn-default clickplz"><span class="glyphicon glyphicon-hand-down"> click pic</span></label></a></li>
 				</ul>
-				<img src="{{imageFile}}" alt="Food Photos" class="img img-rounded hand imgclicked" data-toggle="modal" data-target="#modal_{{id}}">
+				<img src="{{imageFile}}" alt="Food Photos" class="img img-rounded hand" data-toggle="modal" data-target="#modal_{{id}}">
       		</div>     		
 			<div class="modal fade" id="modal_{{id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
@@ -61,6 +61,7 @@
 							{{#each comments}}
 							<p>{{comment_usr_id}} said "{{comment}}"</p>
 							{{/each}}
+							<div class="newComment"></div>
 
 							<div class="addComment">
 								<form id="addCommentForm" role="form" method="get">
@@ -72,7 +73,7 @@
 							</div>
 						</div>
 						</div>
-						<h3>{{tags}} <a href="#">get recipe</a></h3>
+						<h3>{{tags}} <a href="{{recipe}}">get recipe</a></h3>
 					</div>
 				
 					<div class="modal-footer">

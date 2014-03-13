@@ -9,7 +9,6 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-	$(".imgclicked").click(foodImgClicked);
 
 	$(".like").click(function(e) {
 		e.preventDefault();
@@ -44,9 +43,6 @@ function initializePage() {
 	})
 }
 
-function foodImgClicked(e) {
-	ga("send", "event", "img", "click", "image", 1);
-}
 
 function likeFood(result) {
 	var foodID = result;
@@ -63,11 +59,10 @@ function unlikeFood(result) {
 
 // result is an array where result[0] is the comment, and result[1] is the photo id
 function commentFood (result) {
-	console.log(result);
 	var username = result[0].comment_usr_id;
 	var comment = result[0].comment;
 	var photo_id = "#" + result[1].photo_id;
-	$(photo_id + " .comments h4").append('<p>' + username + ' said "' + comment + '"</p>'); // figure out how to add only once with the right css!
+	$(photo_id + " .newComment").append('<p>' + username + ' said "' + comment + '"</p>'); // figure out how to add only once with the right css!
 }
 
 function erasedUpload (foodID) {
