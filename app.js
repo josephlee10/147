@@ -55,18 +55,6 @@ app.get('/liked/:id', favs.likedFoodInfo);
 app.get('/undolike/:id', favs.undoLike);
 app.get('/commented', add.addComments);
 app.get('/eraseMyUpload', favs.eraseMyUpload);
-// app.get('/profile', profile.view);
-// app.get('/search_results', search_results.view);
-
-
-
-
-
-// app.get('/project/:id', project.projectInfo);
-// app.post('/project/new', project.addProject);
-// app.post('/project/:id/delete', project.deleteProject);
-// Example route
-// app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

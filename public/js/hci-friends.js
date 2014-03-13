@@ -33,9 +33,14 @@ function initializePage() {
 
 	$(".eraseFromMyUploads").click(function(e) {
 		var foodID = $(this).closest('.foods').attr('id');
-		console.log(foodID);
 		$.get("/eraseMyUpload?id=" + foodID, erasedUpload);
 	});
+
+	$(".unlike").click(function(e) {
+		var foodID = $(this).closest('.foods').attr('id');
+		console.log(foodID);
+		$.get("/unlike?id=" + foodID, unlikeFood);
+	})
 }
 
 function foodImgClicked(e) {
@@ -43,9 +48,16 @@ function foodImgClicked(e) {
 }
 
 function likeFood(result) {
-	console.log(result);
 	var foodID = result;
 	$("#" + foodID + " .like").replaceWith("<button type='button' class='btn btn-default'><span class='glyphicon glyphicon-heart'> liked</span></button>");
+}
+
+function unlikeFood(result) {
+	var foodID = result;
+	$(".likedFood #" + foodID).fadeOut('slow', function() {
+		$(this).remove();
+		alert("You have unliked this food");
+	})
 }
 
 function commentFood (result) {
